@@ -23,7 +23,7 @@ def main():
             phone.append(info[0])
             password.append(info[1])
             guardianPhone.append(info[2])
-		egcP.append(info[3])
+            egcP.append(info[3])
             sckey.append(info[4])
 	#理论上已经可以完美打卡的了，等晚点有空再搞监护人信息。
         except:
