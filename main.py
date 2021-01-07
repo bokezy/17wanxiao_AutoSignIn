@@ -162,7 +162,7 @@ def GetUserJson(
                          "phonenum": phone,
                          "userid": userId,
                          "updatainfo": [{"propertyname": "jkzt",
-                                         "value": "已返校，在校学校"},
+                                         "value": "已返校，在校学习"},
                                         {"propertyname": "mrcw1",
                                          "value": "35.4"},
                                         {"propertyname": "symptom",
