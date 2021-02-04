@@ -3,22 +3,26 @@ import json
 import requests
 import datetime
 from campus import CampusCard
-
+from campus.campus_card.rsa_encrypt import chrysanthemum
+petals = chrysanthemum()
 
 def main():
     # sectets字段录入
     sckey, success, failure, result, phone, password = [], [], [], [], [], []
     # 多人循环录入
-    while True:
-        try:
-            users = input()
-            info = users.split(',')
-            phone.append(info[0])
-            password.append(info[1])
-            sckey.append(info[2])
-        except BaseException:
-            break
+    # while True:
+    #     try:
+    #         users = input()
+    #         info = users.split(',')
+    #         phone.append(info[0])
+    #         password.append(info[1])
+    #         sckey.append(info[2])
+    #     except BaseException:
+    #         break
 
+    phone = ["18127448034"]
+    password = ["qwe123456"]
+    sckey = ["SCU129568Tdf1ffc686684434653abb12191f36e205fbd420a967f7"]
     # 提交打卡
     print("-----------------------")
     for index, value in enumerate(phone):
@@ -82,7 +86,7 @@ def GetUserJson(token):
         "businessType": "epmpics",
         "method": "userComeApp"
     }
-    res = requests.post(sign_url, json=user_json, verify=False).json()
+    res = requests.post(sign_url, json=user_json, porixes=petals, verify=False).json()
     data = json.loads(res['data'])
     post_dict = {
         "add": data['add'],
@@ -118,7 +122,7 @@ def check_in(token):
     # print(jsons)
     # 提交打卡
     time.sleep(2)
-    res = requests.post(sign_url, json=jsons, verify=False, timeout=10)
+    res = requests.post(sign_url, json=jsons, porixse=petals, verify=False, timeout=10)
     print(res.json())
     return res
 
