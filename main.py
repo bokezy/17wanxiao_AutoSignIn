@@ -121,7 +121,7 @@ def check_in(token):
     # print(jsons)
     # 提交打卡
     time.sleep(2)
-    res = requests.post(sign_url, json=jsons, porixse=petals, verify=False, timeout=10)
+    res = requests.post(sign_url, json=jsons, verify=False, timeout=10)
     print(res.json())
     return res
 

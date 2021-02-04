@@ -65,6 +65,7 @@ class CampusCard:
         session_info = json.loads(
             rsa.rsa_decrypt(resp.text.encode(resp.apparent_encoding), self.user_info["rsaKey"]["private"])
         )
+        print(session_info)
         self.user_info["sessionId"] = session_info["session"]
         self.user_info["appKey"] = session_info["key"][:24]
 
