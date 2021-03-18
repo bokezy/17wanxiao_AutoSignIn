@@ -134,7 +134,7 @@ def check_in(token):
 
 # 微信通知
 def WechatPush(title, sckey, success, fail, result):
-    send_url = f"https://sc.ftqq.com/{sckey}.send"
+    send_url = f"https://sctapi.ftqq.com/{sckey}.send"
     strTime = GetNowTime()
     page = json.dumps(result, sort_keys=True, indent=4, separators=(',', ':'), ensure_ascii=False)
     content = [f"""`{strTime}`
