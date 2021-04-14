@@ -36,5 +36,6 @@ def rsa_decrypt(input_string, private_key):
 if __name__ == '__main__':
     pub, pri = create_key_pair(1024)
     i = rsa_encrypt("123456", pub)
+    print(1)
     print(i)
     print(rsa_decrypt(i, pri))
